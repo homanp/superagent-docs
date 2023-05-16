@@ -1,25 +1,15 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
-  },
+  "$schema": "https://superagent-ui.vercel.app/openapi.json",
+  "name": "SuperAgent",
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#e2742b",
+    "light": "#e2742b",
+    "dark": "#e2742b"
   },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
-    }
-  ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "url": "https://superagent-ui.vercel.app"
   },
   "anchors": [
     {
@@ -28,38 +18,54 @@
       "url": "api-reference"
     },
     {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "name": "Github",
+      "icon": "github",
+      "url": "https:/github.com/homanp/superagent"
     }
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
+      "group": "Overview",
+      "pages": ["introduction"]
     },
     {
       "group": "API Documentation",
       "pages": ["api-reference/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Authentication",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/auth-sign-in",
+        "api-reference/endpoint/auth-sign-up"
+      ]
+    },
+    {
+      "group": "API tokens",
+      "pages": [
+        "api-reference/endpoint/get-api-tokens",
+        "api-reference/endpoint/create-api-token",
+        "api-reference/endpoint/get-api-token",
+        "api-reference/endpoint/delete-api-token"
+      ]
+    },
+    {
+      "group": "Agents",
+      "pages": [
+        "api-reference/endpoint/get-agents",
+        "api-reference/endpoint/create-agent",
+        "api-reference/endpoint/get-agent",
+        "api-reference/endpoint/delete-agent",
+        "api-reference/endpoint/predict-agent"
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/pelaseyed",
+    "github": "https://github.com/homanp/superagent"
+  },
+  "api": {
+    "auth": {
+        "method": "bearer"
+    }
   }
 }

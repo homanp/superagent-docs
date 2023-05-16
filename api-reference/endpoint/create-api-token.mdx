@@ -1,0 +1,58 @@
+---
+title: "/api-tokens"
+api: "POST https://api.mintlify.com/api/v1/api-tokens"
+description: "Create new API token."
+---
+
+### Body
+
+<ParamField body="description" type="string">
+  A description for reference
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  API token object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/api-tokens' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+--data-raw '{
+    "description": "My api token",
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhjmx2ka00016ilng9y0ha3f",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "user": {
+      "id": "clhj28u1300006ig02ptpm1sh",
+      "email": "jane@doe.com,
+      "name": "Jane Doe",
+      "createdAt": "2023-05-11T11:42:54.323000+00:00",
+      "updatedAt": "2023-05-11T11:42:54.323000+00:00",
+      "deletedAt": null,
+      "profile": null,
+      "Agent": null,
+      "ApiToken": null,
+      "Document": null
+    },
+    "description": "My test token",
+    "token": "1c9d14f44fc7492990148e003541577d"    
+  }
+}
+```
+</ResponseExample>

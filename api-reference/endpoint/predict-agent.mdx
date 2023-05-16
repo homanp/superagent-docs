@@ -1,0 +1,63 @@
+---
+title: "/agents/{agentId}/predict"
+api: "POST https://api.mintlify.com/api/v1/agents/{agentId}/predict"
+description: "Call an agent."
+---
+
+### Params
+
+<ParamField path="agentId" required="true" type="string">
+  The ID of the agent.
+</ParamField>
+
+### Body
+
+<ParamField body="input" type="object">
+  An object containing the request to the Agent
+  <Expandable title="input object">
+    <ResponseField name="human_input" type="string">
+      The message to the agent
+    </ResponseField>
+    <ResponseField name="qustions" type="string">
+      The question to a document
+    </ResponseField>
+    <ResponseField name="chat_history" type="array">
+      An array with chat history, pass an empty array `[]` if using default
+      memory
+    </ResponseField>
+  </Expandable>
+</ParamField>
+<ParamField body="has_streaming" type="boolen">
+  Whether or not to return the response as an `EventSource` stream
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Agent object
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/agents/{agentId}/predict' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+--data-raw '{
+    "input": {"question": "Hi", "chat_history": []},
+    "has_streaming": true
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": "Hi, how may I help you?"
+}
+```
+</ResponseExample>

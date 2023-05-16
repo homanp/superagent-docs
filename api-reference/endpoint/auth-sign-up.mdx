@@ -1,0 +1,70 @@
+---
+title: "/auth/sign-up"
+api: "POST https://api.mintlify.com/api/v1/auth/sign-up"
+description: "This endpoint creates a new `user`."
+---
+
+### Body
+
+<ParamField body="name" type="string">
+  The name of the user.
+</ParamField>
+
+<ParamField body="email" type="string">
+  A valid user email.
+</ParamField>
+
+<ParamField body="password" type="string">
+  A valid password
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Object containing the `user`.
+</ResponseField>
+
+<Expandable title="data object">
+  <ResponseField name="user" type="object">
+    The authenticated user as an object.
+  </ResponseField>
+</Expandable>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/auth/sign-up' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Jane Doe",
+    "email": "jan@doen.com",
+    "password": "My password"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "user": {
+      "id": "clhqo2uql00026i1eeegxkzpw",
+      "email": "jane@doe.com",
+      "password": "$2b$12$KhnsvpK0S5hfHa5KSEGLOuy8g2tkRXnB5tEQukMugKXQHOFoIT9ga",
+      "name": "Jane Doe",
+      "createdAt": "2023-05-16T19:28:30.089000+00:00",
+      "updatedAt": "2023-05-16T19:28:30.089000+00:00",
+      "deletedAt": null,
+      "profile": null,
+      "Agent": null,
+      "ApiToken": null,
+      "Document": null
+    }
+  }
+}
+```
+</ResponseExample>

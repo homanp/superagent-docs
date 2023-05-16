@@ -1,0 +1,76 @@
+---
+title: "/agents"
+api: "POST https://api.mintlify.com/api/v1/agents"
+description: "Create new agent."
+---
+
+### Body
+
+<ParamField body="name" type="string">
+  A name for the agent
+</ParamField>
+<ParamField body="type" type="string">
+  The agent type, valid values: `REACT`, `PLANSOLVE`
+</ParamField>
+<ParamField body="llm" type="object">
+  The large language model you want to use with the agent.
+  <Expandable title="llm object">
+    <ResponseField name="provider" type="string">
+      The LLM provider, options: `openai`, `openai-chat`
+    </ResponseField>
+    <ResponseField name="model" type="string">
+      All OpenAI models, e.g `gpt-3.5-turbo` or `gpt-4`.
+    </ResponseField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="hasMemory" type="boolean">
+  If the agent should have memory
+</ParamField>
+<ParamField body="documentId" type="string">
+  A valid `documentId`
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Agent object
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/api-tokens' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+--data-raw '{
+    "description": "My api token",
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+      "id": "clhjk4hab00016iewrghkbs28",
+      "userId": "clhj28u1300006ig02ptpm1sh",
+      "user": {},
+      "document": {},
+      "documentId": "clhnyae1t00016i2ixo0027c5",
+      "name": "Test Agent",
+      "type": "REACT",
+      "llm": {
+          "model": "gpt-3.5-turbo",
+          "provider": "openai-chat"
+      },
+      "hasMemory": true,
+      "AgentMemory": null
+    }
+}
+```
+</ResponseExample>

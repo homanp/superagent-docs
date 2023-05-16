@@ -1,0 +1,52 @@
+---
+title: "/agents/{agentId}"
+api: "GET https://api.mintlify.com/api/v1/agents/{agentId}"
+description: "List single agent."
+---
+
+### Params
+
+<ParamField path="agentId" required="true" type="string">
+  The ID of the agent.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A single agent object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.mintlify.com/api/v1/agents/{agentId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhjk4hab00016iewrghkbs28",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "user": {},
+    "document": {},
+    "documentId": "clhnyae1t00016i2ixo0027c5",
+    "name": "Test Agent",
+    "type": "REACT",
+    "llm": {
+      "model": "gpt-3.5-turbo",
+      "provider": "openai-chat"
+    },
+    "hasMemory": true,
+    "AgentMemory": null
+  }
+}
+```
+</ResponseExample>

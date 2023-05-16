@@ -1,0 +1,68 @@
+---
+title: "/auth/sign-in"
+api: "POST https://api.mintlify.com/api/v1/auth/sign-in"
+description: "This endpoint returns a `user` and a authorization `token`."
+---
+
+### Body
+
+<ParamField body="email" type="string">
+  A valid user email.
+</ParamField>
+
+<ParamField body="password" type="string">
+  A valid password
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Object containing the `user` and `token`.
+</ResponseField>
+
+<Expandable title="data object">
+  <ResponseField name="user" type="object">
+    The authenticated user as an object.
+  </ResponseField>
+  <ResponseField name="token" type="string">
+    The authorization token to use with future requests.
+  </ResponseField>
+</Expandable>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/auth/sign-in' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "jan@doen.com",
+    "password": "My password"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "token": "authorization_bearer_token",
+    "user": {
+      "id": "clhj28u1300006ig02ptpm1sh",
+      "email": "jane@doe.com",
+      "name": "Jane Doe",
+      "createdAt": "2023-05-11T11:42:54.323000+00:00",
+      "updatedAt": "2023-05-11T11:42:54.323000+00:00",
+      "deletedAt": null,
+      "profile": null,
+      "Agent": null,
+      "ApiToken": null,
+      "Document": null
+    }
+  }
+}
+```
+</ResponseExample>
