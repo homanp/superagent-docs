@@ -2,11 +2,12 @@
 title: "/agents/{agentId}"
 api: "GET https://api.mintlify.com/api/v1/agents/{agentId}"
 description: "List single agent."
+authMethod: "bearer"
 ---
 
 ### Params
 
-<ParamField path="agentId" required="true" type="string">
+<ParamField path="agentId" required type="string">
   The ID of the agent.
 </ParamField>
 

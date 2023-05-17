@@ -4,6 +4,12 @@ api: "POST https://api.mintlify.com/api/v1/agents/{agentId}/predict"
 description: "Call an agent."
 ---
 
+### Authentication headers
+
+<ParamField header="X_SUPERAGENT_API_KEY" required="true" type="string">
+  The ID of the agent.
+</ParamField>
+
 ### Params
 
 <ParamField path="agentId" required="true" type="string">
@@ -20,10 +26,6 @@ description: "Call an agent."
     </ResponseField>
     <ResponseField name="qustions" type="string">
       The question to a document
-    </ResponseField>
-    <ResponseField name="chat_history" type="array">
-      An array with chat history, pass an empty array `[]` if using default
-      memory
     </ResponseField>
   </Expandable>
 </ParamField>
@@ -45,9 +47,9 @@ description: "Call an agent."
 ```bash Example Request
 curl --location --request POST 'https://api.mintlify.com/api/v1/agents/{agentId}/predict' \
 --header 'Content-Type: application/json' \
---header 'Autorization: Bearer <token>'
+--header 'X_SUPERAGENT_API_KEY: <api_token>'
 --data-raw '{
-    "input": {"question": "Hi", "chat_history": []},
+    "input": {"question": "Hi"},
     "has_streaming": true
 }'
 ```

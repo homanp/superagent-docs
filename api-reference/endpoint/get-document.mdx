@@ -1,0 +1,49 @@
+---
+title: "/documents/{documentId}"
+api: "GET https://api.mintlify.com/api/v1/documents/{documentId}"
+description: "Get a single document."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="documentId" required type="string">
+  A valid `document` id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `document` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.mintlify.com/api/v1/documents/{documentId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhnyae1t00016i2ixo0027c5",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "user": {},
+    "type": "PDF",
+    "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/IR/TSLA-Q1-2023-Update",
+    "createdAt": "2023-05-14T21:50:59.349000+00:00",
+    "updatedAt": "2023-05-14T21:50:59.349000+00:00",
+    "index": null,
+    "Agent": null
+  }
+}
+```
+</ResponseExample>

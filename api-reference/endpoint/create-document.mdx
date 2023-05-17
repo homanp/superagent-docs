@@ -1,0 +1,56 @@
+---
+title: "/documents"
+api: "POST https://api.mintlify.com/api/v1/documents"
+description: "Create new document."
+authMethod: "bearer"
+---
+
+### Body
+
+<ParamField body="type" type="string">
+  The document type. Options: `TXT`, `PDF`.
+</ParamField>
+<ParamField body="url" type="string">
+  A publicly available `URL` for the document.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `document` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.mintlify.com/api/v1/documents' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>' \
+--data-raw '{
+    "type": "PDF",
+    "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/IR/TSLA-Q1-2023-Update"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhnyae1t00016i2ixo0027c5",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "user": {},
+    "type": "PDF",
+    "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/IR/TSLA-Q1-2023-Update",
+    "createdAt": "2023-05-14T21:50:59.349000+00:00",
+    "updatedAt": "2023-05-14T21:50:59.349000+00:00",
+    "index": null,
+    "Agent": null
+  }
+}
+```
+</ResponseExample>

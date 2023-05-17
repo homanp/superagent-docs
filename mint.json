@@ -7,6 +7,10 @@
     "light": "#e2742b",
     "dark": "#e2742b"
   },
+  "topbarLinks": [{
+    "name": "Login",
+    "url": "https://superagent-ui.vercel.app/login"
+  }],
   "topbarCtaButton": {
     "name": "Get Started",
     "url": "https://superagent-ui.vercel.app"
@@ -26,7 +30,7 @@
   "navigation": [
     {
       "group": "Overview",
-      "pages": ["introduction"]
+      "pages": ["introduction", "platform", "concepts"]
     },
     {
       "group": "API Documentation",
@@ -57,15 +61,19 @@
         "api-reference/endpoint/delete-agent",
         "api-reference/endpoint/predict-agent"
       ]
+    },
+    {
+      "group": "Documents",
+      "pages": [
+        "api-reference/endpoint/get-documents",
+        "api-reference/endpoint/create-document",
+        "api-reference/endpoint/get-document",
+        "api-reference/endpoint/delete-document"
+      ]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/pelaseyed",
     "github": "https://github.com/homanp/superagent"
-  },
-  "api": {
-    "auth": {
-        "method": "bearer"
-    }
   }
 }
