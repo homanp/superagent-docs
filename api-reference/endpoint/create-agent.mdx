@@ -17,10 +17,11 @@ authMethod: "bearer"
   The large language model you want to use with the agent.
   <Expandable title="llm object">
     <ResponseField name="provider" type="string">
-      The LLM provider, options: `openai`, `openai-chat`
+      The LLM provider, options: `openai`, `openai-chat`, `anthropic`
     </ResponseField>
     <ResponseField name="model" type="string">
-      All OpenAI models, e.g `gpt-3.5-turbo` or `gpt-4`.
+      The specific model you want to run, e.g `gpt-3.5-turbo`, `gpt-4`,
+      'claude-v1` etc.
     </ResponseField>
   </Expandable>
 </ParamField>
