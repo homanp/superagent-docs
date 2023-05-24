@@ -25,6 +25,11 @@
       "name": "Github",
       "icon": "github",
       "url": "https://github.com/homanp/superagent.git"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://gist.github.com/homanp/a68e5b531bfb58deea1b6473fe4c22ee"
     }
   ],
   "navigation": [
