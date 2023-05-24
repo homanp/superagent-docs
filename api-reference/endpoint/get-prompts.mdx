@@ -1,0 +1,43 @@
+---
+title: "/prompts"
+api: "GET https://api.superagent.sh/api/v1/prompts"
+description: "List all prompts."
+authMethod: "bearer"
+---
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  List of prompt objects.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.superagent.sh/api/v1/promtps' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": [
+    {
+      "id": "cli28c2vd00016itbrlhekwql",
+      "name": "My prompt",
+      "template": "...",
+      "input_variables": [
+        "question",
+        "history"
+      ],
+    }
+  ]
+}
+```
+</ResponseExample>

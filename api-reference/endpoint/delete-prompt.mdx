@@ -1,0 +1,35 @@
+---
+title: "/prompts/{promptId}"
+api: "DELETE https://api.superagent.sh/api/v1/prompts/{promptId}"
+description: "Delete a single prompt."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="promptId" required type="string">
+  A valid `prompt` id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request DELETE 'https://api.superagent.sh/api/v1/prompts/{promptId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": null
+}
+```
+</ResponseExample>

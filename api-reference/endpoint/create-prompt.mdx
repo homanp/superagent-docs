@@ -1,0 +1,58 @@
+---
+title: "/prompts"
+api: "POST https://api.superagent.sh/api/v1/prompts"
+description: "Create new prompt."
+authMethod: "bearer"
+---
+
+### Body
+
+<ParamField body="name" type="string">
+  The name of the prompt.
+</ParamField>
+<ParamField body="input_variables" type="object">
+  An `array` containing input variables.
+</ParamField>
+<ParamField body="template" type="string">
+  The prompt template.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `prompt` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.superagent.sh/api/v1/prompts' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>' \
+--data-raw '{
+    "name": "My prompt",
+    "input_variables": ["question", "history"],
+    "template": "My prompt template with {histroy} and {question}"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+   "id": "cli28c2vd00016itbrlhekwql",
+    "name": "My prompt",
+    "template": "...",
+    "input_variables": [
+        "question",
+        "history"
+    ],
+  }
+}
+```
+</ResponseExample>
