@@ -68,6 +68,15 @@
       ]
     },
     {
+      "group": "Prompts",
+      "pages": [
+        "api-reference/endpoint/get-prompts",
+        "api-reference/endpoint/create-prompt",
+        "api-reference/endpoint/get-promtp",
+        "api-reference/endpoint/delete-prompt"
+      ]
+    },
+    {
       "group": "Documents",
       "pages": [
         "api-reference/endpoint/get-documents",
