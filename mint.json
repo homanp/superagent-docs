@@ -72,7 +72,7 @@
       "pages": [
         "api-reference/endpoint/get-prompts",
         "api-reference/endpoint/create-prompt",
-        "api-reference/endpoint/get-promtp",
+        "api-reference/endpoint/get-prompt",
         "api-reference/endpoint/delete-prompt"
       ]
     },
