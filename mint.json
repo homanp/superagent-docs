@@ -9,11 +9,11 @@
   },
   "topbarLinks": [{
     "name": "Login",
-    "url": "https://superagent-ui.vercel.app/login"
+    "url": "https:/superagent.sh/login"
   }],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://superagent-ui.vercel.app"
+    "url": "https://superagent.sh"
   },
   "anchors": [
     {
