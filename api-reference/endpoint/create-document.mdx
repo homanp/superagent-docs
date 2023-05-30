@@ -8,10 +8,24 @@ authMethod: "bearer"
 ### Body
 
 <ParamField body="type" type="string">
-  The document type. Options: `TXT`, `PDF`.
+  The document type. Options: `TXT`, `PDF` or `OPENAPI`.
 </ParamField>
 <ParamField body="url" type="string">
   A publicly available `URL` for the document.
+</ParamField>
+<ParamField body="authorization" type="object">
+  Any authorization/authentication needed to access the document
+  <Expandable title="authorization object">
+    <ResponseField name="type" type="string">
+      The authorization type, e.g `header` or `param`
+    </ResponseField>
+    <ResponseField name="key" type="string">
+      The header or query param key.
+    </ResponseField>
+    <ResponseField name="value" type="string">
+      The header or query param value.
+    </ResponseField>
+  </Expandable>
 </ParamField>
 
 ### Response
