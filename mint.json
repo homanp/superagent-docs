@@ -1,6 +1,6 @@
 {
-  "$schema": "https://superagent-ui.vercel.app/openapi.json",
-  "name": "SuperAgent",
+  "$schema": "https://api.superagent.sh/openapi.json",
+  "name": "Superagent",
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#e2742b",
