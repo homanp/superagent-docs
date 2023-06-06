@@ -18,12 +18,12 @@ authMethod: "bearer"
 </ResponseField>
 
 <ResponseField name="data" type="object">
-  List of api token objects.
+  A single api token object.
 </ResponseField>
 
 <RequestExample>
 ```bash Example Request
-curl --location --request GET 'https://api.superagent.sh/api/v1/api-tokens' \
+curl --location --request GET 'https://api.superagent.sh/api/v1/api-tokens/{tokenId}' \
 --header 'Content-Type: application/json' \
 --header 'Autorization: Bearer <token>'
 ```
