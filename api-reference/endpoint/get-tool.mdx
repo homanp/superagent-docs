@@ -1,0 +1,56 @@
+---
+title: "/tools/{toolId}"
+api: "GET https://api.superagent.sh/api/v1/tools/{toolId}"
+description: "Get single tool."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="toolId" required type="string">
+  A valid `tool` ID.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A single tool object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.superagent.sh/api/v1/tools/{toolId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhjmx2ka00016ilng9y0ha3f",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "name": "My test tool",
+    "type": "SEARCH",
+    "user": {
+      "id": "clhj28u1300006ig02ptpm1sh",
+      "email": "jane@doe.com,
+      "name": "Jane Doe",
+      "createdAt": "2023-05-11T11:42:54.323000+00:00",
+      "updatedAt": "2023-05-11T11:42:54.323000+00:00",
+      "deletedAt": null,
+      "profile": null,
+      "Agent": null,
+      "ApiToken": null,
+      "Document": null
+    },   
+  }
+}
+```
+</ResponseExample>

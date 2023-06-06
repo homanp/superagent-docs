@@ -68,6 +68,15 @@
       ]
     },
     {
+      "group": "Tools",
+      "pages": [
+        "api-reference/endpoint/get-tools",
+        "api-reference/endpoint/create-tool",
+        "api-reference/endpoint/get-tool",
+        "api-reference/endpoint/delete-tool"
+      ]
+    },
+    {
       "group": "Prompts",
       "pages": [
         "api-reference/endpoint/get-prompts",
