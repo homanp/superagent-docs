@@ -1,0 +1,62 @@
+---
+title: "/prompts/{promptId}"
+api: "PATCH https://api.superagent.sh/api/v1/prompts/{promptId}"
+description: "Patch a prompt."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="promptId" required type="string">
+  A valid `prompt` id.
+</ParamField>
+
+### Body
+
+<ParamField body="name" type="string">
+  The name of the prompt.
+</ParamField>
+<ParamField body="input_variables" type="object">
+  An `array` containing input variables.
+</ParamField>
+<ParamField body="template" type="string">
+  The prompt template.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `prompt` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request PATCH 'https://api.superagent.sh/api/v1/prompts/{promptId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>' \
+--data-raw '{
+    "name": "My patched prompt",
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+   "id": "cli28c2vd00016itbrlhekwql",
+    "name": "My patched prompt",
+    "template": "...",
+    "input_variables": [
+        "question",
+        "history"
+    ],
+  }
+}
+```
+</ResponseExample>

@@ -82,6 +82,7 @@
         "api-reference/endpoint/get-prompts",
         "api-reference/endpoint/create-prompt",
         "api-reference/endpoint/get-prompt",
+        "api-reference/endpoint/patch-prompt",
         "api-reference/endpoint/delete-prompt"
       ]
     },
