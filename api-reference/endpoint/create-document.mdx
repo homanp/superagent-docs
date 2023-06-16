@@ -7,6 +7,9 @@ authMethod: "bearer"
 
 ### Body
 
+<ParamField body="name" type="string">
+  A name for the document.
+</ParamField>
 <ParamField body="type" type="string">
   The document type. Options: `TXT`, `PDF`, `OPENAPI` or `URL`.
 </ParamField>
@@ -44,6 +47,7 @@ curl --location --request POST 'https://api.superagent.sh/api/v1/documents' \
 --header 'Content-Type: application/json' \
 --header 'Autorization: Bearer <token>' \
 --data-raw '{
+    "name": "My document",
     "type": "PDF",
     "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/IR/TSLA-Q1-2023-Update"
 }'
