@@ -16,6 +16,12 @@ authMethod: "bearer"
 <ParamField body="url" type="string">
   A publicly available `URL` for the document.
 </ParamField>
+<ParamField body="from_page" type="number">
+  The first page to ingest.
+</ParamField>
+<ParamField body="to_page" type="string">
+  The last page to ingest.
+</ParamField>
 <ParamField body="authorization" type="object">
   Any authorization/authentication needed to access the document
   <Expandable title="authorization object">
