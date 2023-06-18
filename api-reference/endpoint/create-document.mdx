@@ -30,6 +30,22 @@ authMethod: "bearer"
     </ResponseField>
   </Expandable>
 </ParamField>
+<ParamField body="splitter" type="object">
+  The desired text splitter for the document, defaults to
+  `CharacterTextSplitter`.
+  <Expandable title="authorization object">
+    <ResponseField name="type" type="string">
+      Valid options, `character`, `recursive`, `token`, `spacy`, `nltk`,
+      `huggingface`.
+    </ResponseField>
+    <ResponseField name="chunk_size" type="number">
+      The `chunk_size` of the text splitter.
+    </ResponseField>
+    <ResponseField name="chunk_overlap" type="number">
+      The `chunk_overlap` of the text splitter.
+    </ResponseField>
+  </Expandable>
+</ParamField>
 
 ### Response
 
