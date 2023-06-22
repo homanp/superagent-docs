@@ -68,6 +68,24 @@
       ]
     },
     {
+      "group": "Agent documents",
+      "pages": [
+        "api-reference/endpoint/get-agent-documents",
+        "api-reference/endpoint/create-agent-document",
+        "api-reference/endpoint/get-agent-document",
+        "api-reference/endpoint/delete-agent-document"
+      ]
+    },
+    {
+      "group": "Agent tools",
+      "pages": [
+        "api-reference/endpoint/get-agent-tools",
+        "api-reference/endpoint/create-agent-tool",
+        "api-reference/endpoint/get-agent-tool",
+        "api-reference/endpoint/delete-agent-tool"
+      ]
+    },
+    {
       "group": "Tools",
       "pages": [
         "api-reference/endpoint/get-tools",

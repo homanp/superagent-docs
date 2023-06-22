@@ -21,11 +21,8 @@ description: "Call an agent."
 <ParamField body="input" type="object">
   An object containing the request to the Agent
   <Expandable title="input object">
-    <ResponseField name="human_input" type="string">
+    <ResponseField name="input" type="string">
       The message to the agent
-    </ResponseField>
-    <ResponseField name="qustions" type="string">
-      The question to a document
     </ResponseField>
   </Expandable>
 </ParamField>
@@ -49,7 +46,7 @@ curl --location --request POST 'https://api.superagent.sh/api/v1/agents/{agentId
 --header 'Content-Type: application/json' \
 --header 'X_SUPERAGENT_API_KEY: <api_token>'
 --data-raw '{
-    "input": {"question": "Hi"},
+    "input": {"input": "Hi"},
     "has_streaming": true
 }'
 ```
@@ -59,7 +56,8 @@ curl --location --request POST 'https://api.superagent.sh/api/v1/agents/{agentId
 ```json Response
 {
   "success": true,
-  "data": "Hi, how may I help you?"
+  "data": "Hi, how may I help you?",
+  "trace": {}
 }
 ```
 </ResponseExample>
