@@ -11,7 +11,7 @@ authMethod: "bearer"
   A name for the agent
 </ParamField>
 <ParamField body="type" type="string">
-  The agent type, valid values: `REACT`, `PLANSOLVE`
+  The agent type, valid values: `OPENAI`, `REACT`
 </ParamField>
 <ParamField body="llm" type="object">
   The large language model you want to use with the agent.
@@ -29,12 +29,8 @@ authMethod: "bearer"
     </ResponseField>
   </Expandable>
 </ParamField>
-
 <ParamField body="hasMemory" type="boolean">
   If the agent should have memory
-</ParamField>
-<ParamField body="documentId" type="string">
-  A valid `documentId`
 </ParamField>
 <ParamField body="promptId" type="string">
   A valid `promptId`
@@ -52,11 +48,17 @@ authMethod: "bearer"
 
 <RequestExample>
 ```bash Example Request
-curl --location --request POST 'https://api.superagent.sh/api/v1/api-tokens' \
+curl --location --request POST 'https://api.superagent.sh/api/v1/agents' \
 --header 'Content-Type: application/json' \
 --header 'Autorization: Bearer <token>'
 --data-raw '{
-    "description": "My api token",
+    "name": "My agent",
+    "type": "OPENAI",
+    "llm": {
+      "model": "openai-chat",
+      "provider": "gpt-3.5-turbo"
+    }
+    "hasMemory": true,
 }'
 ```
 </RequestExample>
@@ -69,8 +71,6 @@ curl --location --request POST 'https://api.superagent.sh/api/v1/api-tokens' \
       "id": "clhjk4hab00016iewrghkbs28",
       "userId": "clhj28u1300006ig02ptpm1sh",
       "user": {},
-      "document": {},
-      "documentId": "clhnyae1t00016i2ixo0027c5",
       "name": "Test Agent",
       "type": "REACT",
       "llm": {

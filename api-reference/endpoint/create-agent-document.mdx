@@ -1,0 +1,52 @@
+---
+title: "/agent-documents"
+api: "POST https://api.superagent.sh/api/v1/agent-documents"
+description: "Create new agent document."
+authMethod: "bearer"
+---
+
+### Body
+
+<ParamField body="documentId" type="string">
+  A valid `Document` ID.
+</ParamField>
+<ParamField body="agentId" type="string">
+  A valid `Agent` ID.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Agent document object
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.superagent.sh/api/v1/agents' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+--data-raw '{
+    "agentId": "<AGENT_ID>",
+    "documentId": "<DOCUMENT_ID>"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+      "user": {},
+      "agent": {},
+      "agentId": "",
+      "document": {},
+      "documentId": ""
+    }
+}
+```
+</ResponseExample>

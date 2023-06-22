@@ -1,0 +1,35 @@
+---
+title: "/agent-documents/{agentDocumentId}"
+api: "DELETE https://api.superagent.sh/api/v1/agent-documents/{agentDocumentId}"
+description: "Delete a single agent document."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="agentDocumentId" required type="string">
+  A valid `agent document` id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request DELETE 'https://api.superagent.sh/api/v1/agent-documents/{agentDocumentId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": null
+}
+```
+</ResponseExample>
