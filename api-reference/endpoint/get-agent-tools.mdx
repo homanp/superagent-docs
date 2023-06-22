@@ -1,0 +1,33 @@
+---
+title: "/agent-tools"
+api: "GET https://api.superagent.sh/api/v1/agent-tools"
+description: "List all agent tools."
+authMethod: "bearer"
+---
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A list of agent tools.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.superagent.sh/api/v1/agent-tools' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": [{...}]
+}
+```
+</ResponseExample>

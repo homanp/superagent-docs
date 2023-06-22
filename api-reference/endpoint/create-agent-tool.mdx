@@ -1,0 +1,52 @@
+---
+title: "/agent-tools"
+api: "POST https://api.superagent.sh/api/v1/agent-tools"
+description: "Create new agent tool."
+authMethod: "bearer"
+---
+
+### Body
+
+<ParamField body="toolId" type="string">
+  A valid `Tool` ID.
+</ParamField>
+<ParamField body="agentId" type="string">
+  A valid `Agent` ID.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Agent tool object
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.superagent.sh/api/v1/agent-tools' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+--data-raw '{
+    "agentId": "<AGENT_ID>",
+    "toolId": "<TOOL_ID>"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+      "user": {},
+      "agent": {},
+      "agentId": "",
+      "tool": {},
+      "toolId": ""
+    }
+}
+```
+</ResponseExample>

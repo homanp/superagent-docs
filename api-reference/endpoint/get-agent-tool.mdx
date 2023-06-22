@@ -1,0 +1,45 @@
+---
+title: "/agent-tools/{agentToolId}"
+api: "GET https://api.superagent.sh/api/v1/agent-tools/{agentToolId}"
+description: "List single agent tool."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="agentToolId" required type="string">
+  The ID of the agent tool.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A single agent tool object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.superagent.sh/api/v1/agent-tools/{agentToolId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhjk4hab00016iewrghkbs28",
+    "agent": {},
+    "agentId": "clhnyae1t00016i2ixo0027c2",
+    "tool": {},
+    "toolId": "clhnyae1t00016i2ixo0027c5"
+  }
+}
+```
+</ResponseExample>
