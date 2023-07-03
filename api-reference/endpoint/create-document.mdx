@@ -11,7 +11,7 @@ authMethod: "bearer"
   A name for the document.
 </ParamField>
 <ParamField body="type" type="string">
-  The document type. Options: `TXT`, `PDF`, `YOUTUBE`, `OPENAPI` or `URL`.
+  The document type. Options: `TXT`, `PDF`, `YOUTUBE`, `CSV` or `URL`.
 </ParamField>
 <ParamField body="url" type="string">
   A publicly available `URL` for the document.
@@ -51,6 +51,9 @@ authMethod: "bearer"
       The `chunk_overlap` of the text splitter.
     </ResponseField>
   </Expandable>
+</ParamField>
+<ParamField body="metadata" type="object">
+  Any key values necessary to ingest the document.
 </ParamField>
 
 ### Response
