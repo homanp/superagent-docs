@@ -91,6 +91,7 @@
         "api-reference/endpoint/get-tools",
         "api-reference/endpoint/create-tool",
         "api-reference/endpoint/get-tool",
+        "api-reference/endpoint/patch-tool",
         "api-reference/endpoint/delete-tool"
       ]
     },
