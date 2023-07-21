@@ -86,6 +86,16 @@
       ]
     },
     {
+      "group": "Tags",
+      "pages": [
+        "api-reference/endpoint/get-tags",
+        "api-reference/endpoint/create-tag",
+        "api-reference/endpoint/get-tag",
+        "api-reference/endpoint/patch-tag",
+        "api-reference/endpoint/delete-tag"
+      ]
+    },
+    {
       "group": "Tools",
       "pages": [
         "api-reference/endpoint/get-tools",
