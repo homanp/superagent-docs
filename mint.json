@@ -121,7 +121,8 @@
         "api-reference/endpoint/get-documents",
         "api-reference/endpoint/create-document",
         "api-reference/endpoint/get-document",
-        "api-reference/endpoint/delete-document"
+        "api-reference/endpoint/delete-document",
+        "api-reference/endpoint/patch-document"
       ]
     }
   ],
