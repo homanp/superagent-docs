@@ -35,6 +35,9 @@ authMethod: "bearer"
 <ParamField body="promptId" type="string">
   A valid `promptId`
 </ParamField>
+<ParamField body="tags" type="object">
+  An array of valid `tag` objects
+</ParamField>
 
 ### Response
 
@@ -73,6 +76,7 @@ curl --location --request POST 'https://api.superagent.sh/api/v1/agents' \
       "user": {},
       "name": "Test Agent",
       "type": "REACT",
+      "tags": [],
       "llm": {
           "model": "gpt-3.5-turbo",
           "provider": "openai-chat"

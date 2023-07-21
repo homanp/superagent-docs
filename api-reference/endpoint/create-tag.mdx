@@ -1,0 +1,54 @@
+---
+title: "/tags"
+api: "POST https://api.superagent.sh/api/v1/tags"
+description: "Create new tag."
+authMethod: "bearer"
+---
+
+### Body
+
+<ParamField body="name" type="string">
+  The name of the tag.
+</ParamField>
+<ParamField body="color" type="string">
+  The color of the tag, should be valid HEX code.
+</ParamField>
+<ParamField body="userId" type="object">
+  The ID of the user that creates the tag
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `tag` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request POST 'https://api.superagent.sh/api/v1/tags' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>' \
+--data-raw '{
+    "name": "My tag",
+    "color": "#FFFFFFF",
+    "userId": "123"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "cli28c2vd00016itbrlhekwql",
+    "name": "My tag",
+    "color": "#FFFFFF"
+  }
+}
+```
+</ResponseExample>

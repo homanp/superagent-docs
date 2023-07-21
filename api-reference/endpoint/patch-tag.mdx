@@ -1,0 +1,57 @@
+---
+title: "/tags/{tagId}"
+api: "PATCH https://api.superagent.sh/api/v1/tags/{tagId}"
+description: "Patch a tag."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="tagId" required type="string">
+  A valid `tag` id.
+</ParamField>
+
+### Body
+
+<ParamField body="name" type="string">
+  The name of the tag.
+</ParamField>
+<ParamField body="color" type="string">
+  The color of the tag
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A `tag` object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request PATCH 'https://api.superagent.sh/api/v1/tags/{tagId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>' \
+--data-raw '{
+    "name": "My patched tag",
+    "color": "#FFFFFF"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+   "id": "cli28c2vd00016itbrlhekwql",
+    "name": "My patched tag",
+    "color": "#FFFFFFF",
+    ...
+  }
+}
+```
+</ResponseExample>

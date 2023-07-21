@@ -1,0 +1,44 @@
+---
+title: "/tags/{tagId}"
+api: "GET https://api.superagent.sh/api/v1/tags/{tagId}"
+description: "Get single tag."
+authMethod: "bearer"
+---
+
+### Params
+
+<ParamField path="tagId" required type="string">
+  A valid `tag` ID.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  A single tag object.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location --request GET 'https://api.superagent.sh/api/v1/tags/{tagId}' \
+--header 'Content-Type: application/json' \
+--header 'Autorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "data": {
+    "id": "clhjmx2ka00016ilng9y0ha3f",
+    "userId": "clhj28u1300006ig02ptpm1sh",
+    "name": "My tag",
+    "color": "#FFF",  
+  }
+}
+```
+</ResponseExample>
